@@ -11,6 +11,7 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
+            //add Color var for buttons
             this.BackColor = Color.FromArgb(102, 153, 204);
             bC.BackColor = Color.FromArgb(197, 216, 109);
             bClear.BackColor = Color.FromArgb(197, 216, 109);
@@ -41,6 +42,8 @@ namespace Calculator
         private void bvalue0_Click(object sender, EventArgs e)
         {
             int value = 0;
+            //1)не повинно передаватися більше 3х параметрів 
+            //2) не повинні передавати за посиланям
             CalculatorLogic.AdNumber(value, ref position, ref lvalue, ref result, ref isdelete, ref laction);
             position++;
         }
