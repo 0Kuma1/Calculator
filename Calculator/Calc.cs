@@ -62,14 +62,14 @@ public class CalculatorLogic
 
     public static void Plus(ref Label text, ref double result,ref Label action,ref string events,ref int result2)
     {
-        action.Text = text.Text+" " + "+";
+        action.Text = text.Text+" +";
         events="+";
         text.Text = "0";
         result2= (int)result;
     }
     public static void Minus(ref Label text, ref double result, ref Label action, ref string events, ref int result2)
     {
-        action.Text = text.Text + " " + "-";
+        action.Text = text.Text + " -";
         events = "-";
         text.Text = "0";
         result2 = (int)result;
@@ -147,10 +147,10 @@ public class CalculatorLogic
                 break;
         }
     }
-    public static void Sqrt(ref Label text, ref double result)
+    //!!!!!!!!
+    public static double Sqrt(double result)
     {
-        result = (int)Math.Sqrt(result);
-        text.Text = result.ToString();
+        return (int)Math.Sqrt(result);
     }
     public static void Poww(ref Label text, ref double result)
     {
