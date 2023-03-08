@@ -1,4 +1,4 @@
-namespace Calculator
+﻿namespace Calculator
 {
     public partial class Form1 : Form
     {
@@ -10,29 +10,33 @@ namespace Calculator
         public int ress = 1;
         public Form1()
         {
+            Color backColor = Color.FromArgb(102, 153, 204);
+            Color clearColor = Color.FromArgb(197, 216, 109);
+            Color signColor = Color.FromArgb(51, 30, 56);
+            Color valueColor = Color.FromArgb(112, 160, 175);
             InitializeComponent();
-            this.BackColor = Color.FromArgb(102, 153, 204);
-            bC.BackColor = Color.FromArgb(197, 216, 109);
-            bClear.BackColor = Color.FromArgb(197, 216, 109);
-            bDivide.BackColor = Color.FromArgb(51, 30, 56);
-            bPluss.BackColor = Color.FromArgb(51, 30, 56);
-            bMinus.BackColor = Color.FromArgb(51, 30, 56);
-            bMultiply.BackColor = Color.FromArgb(51, 30, 56);
-            bMultiply.BackColor = Color.FromArgb(51, 30, 56);
-            bMinorPlus.BackColor = Color.FromArgb(51, 30, 56);
+            this.BackColor = backColor;
+            bC.BackColor = clearColor;
+            bClear.BackColor = clearColor;
+            bDivide.BackColor = signColor;
+            bPluss.BackColor = signColor;
+            bMinus.BackColor = signColor;
+            bMultiply.BackColor = signColor;
+            bMultiply.BackColor = signColor;
+            bMinorPlus.BackColor = signColor;
             
             
-            bEquals.BackColor = Color.FromArgb(197, 216, 109);
-            bvalue1.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue2.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue3.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue4.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue5.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue6.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue7.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue8.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue9.BackColor = Color.FromArgb(112, 160, 175);
-            bvalue0.BackColor = Color.FromArgb(112, 160, 175);
+            bEquals.BackColor = clearColor;
+            bvalue1.BackColor = valueColor;
+            bvalue2.BackColor = valueColor;
+            bvalue3.BackColor = valueColor;
+            bvalue4.BackColor = valueColor;
+            bvalue5.BackColor = valueColor;
+            bvalue6.BackColor = valueColor;
+            bvalue7.BackColor = valueColor;
+            bvalue8.BackColor = valueColor;
+            bvalue9.BackColor = valueColor;
+            bvalue0.BackColor = valueColor;
         }
         private void Form1_Load(object sender, EventArgs e)
         {

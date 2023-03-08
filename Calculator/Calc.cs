@@ -90,6 +90,7 @@ public class CalculatorLogic
     }
     public static void Equals(ref Label text, ref double result, ref Label action, ref string events, ref int result2,ref bool isdelete)
     {
+        //Enum
         switch (events)
         {
             case"+":
@@ -130,9 +131,9 @@ public class CalculatorLogic
                     action.Text = $"{result2} / {result} =";
                     if (result2 % result != 0)
                     {
-                            float temp1 = result2;
-                            float temp2 = (int)result;
-                            float temp3 = temp1 / temp2;
+                            double temp1 = result2;
+                            double temp2 = (int)result;
+                            double temp3 = temp1 / temp2;
                             text.Text = temp3.ToString();
                     }
                     else
@@ -149,8 +150,10 @@ public class CalculatorLogic
     }
     public static void Sqrt(ref Label text, ref double result)
     {
-        result = (int)Math.Sqrt(result);
+        result = Math.Sqrt(result);
         text.Text = result.ToString();
+        text.Text = text.Text.Substring(0,15);
+        result = double.Parse(text.Text);
     }
     public static void Poww(ref Label text, ref double result)
     {
