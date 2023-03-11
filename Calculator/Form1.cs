@@ -1,4 +1,7 @@
-﻿namespace Calculator
+﻿using System;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace Calculator
 {
     public partial class Form1 : Form
     {
@@ -24,8 +27,8 @@
             bMultiply.BackColor = signColor;
             bMultiply.BackColor = signColor;
             bMinorPlus.BackColor = signColor;
-            
-            
+
+
             bEquals.BackColor = clearColor;
             bvalue1.BackColor = valueColor;
             bvalue2.BackColor = valueColor;
@@ -119,27 +122,45 @@
 
         private void bC_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.DeleteAll(ref position, ref lvalue, ref result, ref laction);
+            CalculatorLogic.DeleteAll(ref position, ref result);
+            laction.Text = Textss.Empty(laction.Text);
+            events = Textss.Empty(events);
+            lvalue.Text = Textss.TexttoZero(lvalue.Text);
         }
 
         private void bDivide_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Divide(ref lvalue, ref result, ref laction, ref events, ref result2);
+            CalculatorLogic.Divide(ref result, ref result2);
+            events = Textss.ActionText(events, "/");
+            laction.Text = Textss.TextwithAction(laction.Text, "/", lvalue.Text);
+            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+
         }
 
         private void bMultiply_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Multiply(ref lvalue, ref result, ref laction, ref events, ref result2);
+            CalculatorLogic.Multiply(ref result, ref result2);
+            events = Textss.ActionText(events, "*");
+            laction.Text = Textss.TextwithAction(laction.Text, "*", lvalue.Text);
+            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+
         }
 
         private void bMinus_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Minus(ref lvalue, ref result, ref laction, ref events, ref result2);
+            CalculatorLogic.Minus(ref result, ref result2);
+            events = Textss.ActionText(events, "-");
+            laction.Text = Textss.TextwithAction(laction.Text, "-", lvalue.Text);
+            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+
         }
 
         private void bPluss_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Plus(ref lvalue, ref result, ref laction, ref events, ref result2);
+            CalculatorLogic.Plus(ref result, ref result2);
+            events = Textss.ActionText(events, "+");
+            laction.Text = Textss.TextwithAction(laction.Text, "+", lvalue.Text);
+            lvalue.Text = Textss.TexttoZero(lvalue.Text);
         }
 
         private void bEquals_Click(object sender, EventArgs e)
@@ -149,40 +170,53 @@
         private void bSqrt_Click(object sender, EventArgs e)
         {
             CalculatorLogic.Sqrt(ref lvalue, ref result);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
         }
 
         private void bPow_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Poww(ref lvalue, ref result);
+            CalculatorLogic.Poww(ref result);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
         }
         private void bMinorPlus_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.MinorPlus(ref lvalue, ref result);
+            CalculatorLogic.MinorPlus(ref result);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
         }
 
         private void bP_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Pi(ref lvalue, ref result);
+            CalculatorLogic.Pi(ref result);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
         }
 
         private void bE_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.E(ref lvalue, ref result);
+            CalculatorLogic.E(ref result);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
         }
         private void bAbs_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Abs(ref lvalue, ref result);
+            CalculatorLogic.Abs(ref result);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
         }
 
         private void bFac_Click(object sender, EventArgs e)
         {
 
-            CalculatorLogic.Fac(ref lvalue, ref result, ref ress);
+            CalculatorLogic.Fac(ref result, ref ress);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
         }
 
         private void bonex_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.OneX(ref lvalue, ref result);
+            CalculatorLogic.OneX(ref result);
+            lvalue.Text = Textss.ResultToString(lvalue.Text, result);
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

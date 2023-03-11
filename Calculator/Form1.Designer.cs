@@ -388,6 +388,7 @@
             Controls.Add(lvalue);
             Name = "Form1";
             Text = "Calculator";
+            Load += Form1_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

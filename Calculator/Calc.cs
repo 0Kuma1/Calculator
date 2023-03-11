@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,6 @@ using System.Threading.Tasks;
 
 public class CalculatorLogic
 {
-
     public static void AdNumber(int value,ref int position,ref Label text,ref double result, ref bool isdelete, ref Label action)
     {
         if (isdelete)
@@ -52,45 +52,31 @@ public class CalculatorLogic
             text.Text= "0";
         }
     }
-    public static void DeleteAll(ref int position,ref Label text,ref double result,ref Label action)
+    public static void DeleteAll(ref int position,ref double result)
     {
         position = 0;
-        text.Text = "0";
         result = 0;
-        action.Text = String.Empty;
     }
 
-    public static void Plus(ref Label text, ref double result,ref Label action,ref string events,ref int result2)
+    public static void Plus(ref double result,ref int result2)
     {
-        action.Text = text.Text+" " + "+";
-        events="+";
-        text.Text = "0";
         result2= (int)result;
     }
-    public static void Minus(ref Label text, ref double result, ref Label action, ref string events, ref int result2)
+    public static void Minus( ref double result,ref int result2)
     {
-        action.Text = text.Text + " " + "-";
-        events = "-";
-        text.Text = "0";
         result2 = (int)result;
     }
-    public static void Multiply(ref Label text, ref double result, ref Label action, ref string events, ref int result2)
+    public static void Multiply( ref double result,ref int result2)
     {
-        action.Text = text.Text + " " + "*";
-        events = "*";
-        text.Text = "0";
         result2 = (int)result;
     }
-    public static void Divide(ref Label text, ref double result, ref Label action, ref string events, ref int result2)
+    public static void Divide( ref double result,ref int result2)
     {
-        action.Text = text.Text + " " + "/";
-        events = "/";
-        text.Text = "0";
         result2 = (int)result;
     }
     public static void Equals(ref Label text, ref double result, ref Label action, ref string events, ref int result2,ref bool isdelete)
     {
-        //Enum
+
         switch (events)
         {
             case"+":
@@ -131,19 +117,19 @@ public class CalculatorLogic
                     action.Text = $"{result2} / {result} =";
                     if (result2 % result != 0)
                     {
-                            double temp1 = result2;
-                            double temp2 = (int)result;
-                            double temp3 = temp1 / temp2;
-                            text.Text = temp3.ToString();
+                        double temp1 = result2;
+                        double temp2 = (int)result;
+                        double temp3 = temp1 / temp2;
+                        text.Text = temp3.ToString();
                     }
                     else
-                        {
-                            result2 /= (int)result;
-                            text.Text = result2.ToString();
-                        }
-                        result2 = 0;
-                        result = 0;
-                        isdelete = true;
+                    {
+                        result2 /= (int)result;
+                        text.Text = result2.ToString();
+                    }
+                    result2 = 0;
+                    result = 0;
+                    isdelete = true;
                     }
                 break;
         }
@@ -151,49 +137,41 @@ public class CalculatorLogic
     public static void Sqrt(ref Label text, ref double result)
     {
         result = Math.Sqrt(result);
-        text.Text = result.ToString();
-        text.Text = text.Text.Substring(0,15);
+        text.Text = Textss.SubstringStr(text.Text, result);
         result = double.Parse(text.Text);
     }
-    public static void Poww(ref Label text, ref double result)
+    public static void Poww(ref double result)
     {
         result = (int)Math.Pow(result,2);
-        text.Text = result.ToString();
     }
-    public static void MinorPlus(ref Label text, ref double result)
+    public static void MinorPlus(ref double result)
     {
         result = -result;
-        text.Text = result.ToString();
     }
-    public static void Pi(ref Label text, ref double result)
+    public static void Pi(ref double result)
     {
         result = Math.PI;
-        text.Text = result.ToString();
     }
-    public static void E(ref Label text, ref double result)
+    public static void E(ref double result)
     {
         result = Math.E;
-        text.Text = result.ToString();
     }
-    public static void Abs(ref Label text, ref double result)
+    public static void Abs(ref double result)
     {
         if(result<0)
         {
             result = -result;
         }
-        text.Text = result.ToString();
     }
-    public static void Fac(ref Label text, ref double result,ref int ress)
+    public static void Fac(ref double result,ref int ress)
     {
         ress = 1;
         for (int i = (int)result; i > 0; i--)
             ress *= i;
         result = ress;
-        text.Text = result.ToString();
     }
-    public static void OneX(ref Label text, ref double result)
+    public static void OneX(ref double result)
     {
         result = 1 / result;
-        text.Text = result.ToString();
     }
 }
