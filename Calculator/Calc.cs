@@ -76,7 +76,6 @@ public class CalculatorLogic
     }
     public static void Equals(ref Label text, ref double result, ref Label action, ref string events, ref int result2,ref bool isdelete)
     {
-
         switch (events)
         {
             case"+":
