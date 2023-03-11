@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 public class CalculatorLogic
 {
+    static string action;
     public static void AdNumber(int value,ref int position,ref Label text,ref double result, ref bool isdelete, ref Label action)
     {
         if (isdelete)
@@ -58,9 +59,10 @@ public class CalculatorLogic
         result = 0;
     }
 
-    public static void Plus(ref double result,ref int result2)
+    public static int Plus(double result)
     {
-        result2= (int)result;
+        action = "+";
+        return (int)result;
     }
     public static void Minus( ref double result,ref int result2)
     {
@@ -136,7 +138,7 @@ public class CalculatorLogic
     public static void Sqrt(ref Label text, ref double result)
     {
         result = Math.Sqrt(result);
-        text.Text = Textss.SubstringStr(text.Text, result);
+        text.Text = Textss.SubstringStr( result);
         result = double.Parse(text.Text);
     }
     public static void Poww(ref double result)
