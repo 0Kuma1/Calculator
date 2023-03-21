@@ -8,15 +8,11 @@ namespace Calculator
 {
     public class Textss
     {
-        public static string Empty(string text)
+        //Позабирати зайве
+        //Перенести зміні в calc
+        public static string TextToZero()
         {
-            text = String.Empty;
-            return text;
-        }
-        public static string TexttoZero(string text)
-        {
-            text = "0";
-            return text;
+            return "0";
         }
         public static string TextwithAction(string action , string actionm , string text)
         {

@@ -58,19 +58,19 @@ public class CalculatorLogic
         result = 0;
     }
 
-    public static void Plus(ref double result,ref int result2)
+    public static void Plus(double result,ref int result2)
     {
         result2= (int)result;
     }
-    public static void Minus( ref double result,ref int result2)
+    public static void Minus(double result,ref int result2)
     {
         result2 = (int)result;
     }
-    public static void Multiply( ref double result,ref int result2)
+    public static void Multiply(double result,ref int result2)
     {
         result2 = (int)result;
     }
-    public static void Divide( ref double result,ref int result2)
+    public static void Divide(double result,ref int result2)
     {
         result2 = (int)result;
     }

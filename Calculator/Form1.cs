@@ -123,44 +123,44 @@ namespace Calculator
         private void bC_Click(object sender, EventArgs e)
         {
             CalculatorLogic.DeleteAll(ref position, ref result);
-            laction.Text = Textss.Empty(laction.Text);
-            events = Textss.Empty(events);
-            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+            laction.Text = String.Empty;
+            events = String.Empty;
+            lvalue.Text = Textss.TextToZero();
         }
 
         private void bDivide_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Divide(ref result, ref result2);
+            CalculatorLogic.Divide(result, ref result2);
             events = Textss.ActionText(events, "/");
             laction.Text = Textss.TextwithAction(laction.Text, "/", lvalue.Text);
-            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+            lvalue.Text = Textss.TextToZero();
 
         }
 
         private void bMultiply_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Multiply(ref result, ref result2);
+            CalculatorLogic.Multiply(result, ref result2);
             events = Textss.ActionText(events, "*");
             laction.Text = Textss.TextwithAction(laction.Text, "*", lvalue.Text);
-            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+            lvalue.Text = Textss.TextToZero();
 
         }
 
         private void bMinus_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Minus(ref result, ref result2);
+            CalculatorLogic.Minus(result, ref result2);
             events = Textss.ActionText(events, "-");
             laction.Text = Textss.TextwithAction(laction.Text, "-", lvalue.Text);
-            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+            lvalue.Text = Textss.TextToZero();
 
         }
 
         private void bPluss_Click(object sender, EventArgs e)
         {
-            CalculatorLogic.Plus(ref result, ref result2);
+            CalculatorLogic.Plus(result, ref result2);
             events = Textss.ActionText(events, "+");
             laction.Text = Textss.TextwithAction(laction.Text, "+", lvalue.Text);
-            lvalue.Text = Textss.TexttoZero(lvalue.Text);
+            lvalue.Text = Textss.TextToZero();
         }
 
         private void bEquals_Click(object sender, EventArgs e)
