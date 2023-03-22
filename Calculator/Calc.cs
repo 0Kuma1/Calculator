@@ -1,4 +1,4 @@
-﻿using Calculator;
+using Calculator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 public class CalculatorLogic
 {
+    static string action;
     public static void AdNumber(int value,ref int position,ref Label text,ref double result, ref bool isdelete, ref Label action)
     {
         if (isdelete)
@@ -57,10 +58,10 @@ public class CalculatorLogic
         position = 0;
         result = 0;
     }
-
     public static void Plus(double result,ref int result2)
     {
-        result2= (int)result;
+        action = "+";
+        return (int)result;
     }
     public static void Minus(double result,ref int result2)
     {
