@@ -136,7 +136,7 @@ public class CalculatorLogic
     public static void Sqrt(ref Label text, ref double result)
     {
         result = Math.Sqrt(result);
-        text.Text = Textss.SubstringStr(text.Text, result);
+        text.Text = Textss.SubstringStr(result);
         result = double.Parse(text.Text);
     }
     public static void Poww(ref double result)

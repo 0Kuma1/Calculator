@@ -14,21 +14,19 @@ namespace Calculator
         }
         public static string TextwithAction(string actionm , string text)
         {
-            string action = text + " " + actionm;
+            return text + " " + actionm;
+        }
+        public static string ActionText(string action)
+        {
             return action;
         }
-        public static string ActionText(string text,string action)
+        public static string ResultToString( double result)
         {
-            return text = action;
+            return result.ToString();
         }
-        public static string ResultToString(string text, double result)
+        public static string SubstringStr(double result)
         {
-            return text = result.ToString();
-        }
-        public static string SubstringStr(string text, double result)
-        {
-            text= result.ToString();
-            return text = text.Substring(0, 15);
+            return result.ToString().Substring(0, 15);
         }
     }
 }

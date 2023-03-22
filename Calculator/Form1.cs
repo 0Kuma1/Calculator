@@ -136,7 +136,7 @@ namespace Calculator
             events = "/";
             laction.Text = "/";
             CalculatorLogic.Divide(result, ref result2);
-            events = Textss.ActionText(events, "/");
+            events = Textss.ActionText("/");
             laction.Text = Textss.TextwithAction("/", lvalue.Text);
             lvalue.Text = Textss.TextToZero();
 
@@ -147,7 +147,7 @@ namespace Calculator
             CalculatorLogic.Multiply(result, ref result2);
             events = "*";
             CalculatorLogic.Multiply(result, ref result2);
-            events = Textss.ActionText(events, "*");
+            events = Textss.ActionText( "*");
             laction.Text = Textss.TextwithAction("*", lvalue.Text);
             lvalue.Text = Textss.TextToZero();
 
@@ -158,7 +158,7 @@ namespace Calculator
             CalculatorLogic.Minus(result, ref result2);
             events = "-";
             CalculatorLogic.Minus(result, ref result2);
-            events = Textss.ActionText(events, "-");
+            events = Textss.ActionText( "-");
             laction.Text = Textss.TextwithAction("-", lvalue.Text);
             lvalue.Text = Textss.TextToZero();
 
@@ -169,7 +169,7 @@ namespace Calculator
             CalculatorLogic.Plus(result, ref result2);
             events = "+";
             CalculatorLogic.Plus(result, ref result2);
-            events = Textss.ActionText(events, "+");
+            events = Textss.ActionText("+");
             laction.Text = Textss.TextwithAction("+", lvalue.Text);
             lvalue.Text = Textss.TextToZero();
         }
