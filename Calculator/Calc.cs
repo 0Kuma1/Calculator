@@ -1,4 +1,4 @@
-﻿using Calculator;
+using Calculator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,21 +58,20 @@ public class CalculatorLogic
         position = 0;
         result = 0;
     }
-
-    public static int Plus(double result)
+    public static void Plus(double result,ref int result2)
     {
         action = "+";
         return (int)result;
     }
-    public static void Minus( ref double result,ref int result2)
+    public static void Minus(double result,ref int result2)
     {
         result2 = (int)result;
     }
-    public static void Multiply( ref double result,ref int result2)
+    public static void Multiply(double result,ref int result2)
     {
         result2 = (int)result;
     }
-    public static void Divide( ref double result,ref int result2)
+    public static void Divide(double result,ref int result2)
     {
         result2 = (int)result;
     }
@@ -138,7 +137,7 @@ public class CalculatorLogic
     public static void Sqrt(ref Label text, ref double result)
     {
         result = Math.Sqrt(result);
-        text.Text = Textss.SubstringStr( result);
+        text.Text = Textss.SubstringStr(result);
         result = double.Parse(text.Text);
     }
     public static void Poww(ref double result)

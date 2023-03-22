@@ -8,29 +8,25 @@ namespace Calculator
 {
     public class Textss
     {
-        //public static string Empty()
-        //{
-        //    text = String.Empty;
-        //    return String.Empty;
-        //}
         public static string TextToZero()
         {
             return "0";
         }
-        public static string TextWithAction(string actionm, string text)
-        => text + " " + actionm;
-        //public static string ActionText(string text,string action)
-        //{
-        //    return text = action;
-        //}
-        //public static string ResultToString(string text, double result)
-        //{
-        //    return text = result.ToString();
-        //}
-        public static string SubstringStr(/*string text,*/ double result)
+        public static string TextwithAction(string actionm , string text)
         {
-            //text= result.ToString();
-            return /*text = */result.ToString().Substring(0, 15);
+            return text + " " + actionm;
+        }
+        public static string ActionText(string action)
+        {
+            return action;
+        }
+        public static string ResultToString( double result)
+        {
+            return result.ToString();
+        }
+        public static string SubstringStr(double result)
+        {
+            return result.ToString().Substring(0, 15);
         }
     }
 }
